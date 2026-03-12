@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Мобильная версия - Админ панель</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; display: flex; flex-direction: column; }
+        .phone-frame { width: 390px; height: 844px; margin: 20px auto; background: white; border-radius: 40px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.3); position: relative; display: flex; flex-direction: column; }
+        .status-bar { background: #333; color: white; padding: 10px 20px; display: flex; justify-content: space-between; font-size: 14px; }
+        .app-header { background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); color: white; padding: 15px; }
+        .app-header h1 { font-size: 20px; margin: 0; }
+        .app-header p { font-size: 12px; opacity: 0.9; margin: 5px 0 0 0; }
+        .app-content { flex: 1; overflow-y: auto; padding: 20px; background: #f8f9fa; }
+        .stats-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px; }
+        .stat-card { background: white; padding: 15px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .stat-value { font-size: 24px; font-weight: bold; color: #333; }
+        .stat-label { font-size: 11px; color: #666; margin-top: 5px; }
+        .application-card { background: white; border-radius: 15px; padding: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 15px; }
+        .application-card h3 { font-size: 14px; margin-bottom: 10px; color: #333; }
+        .application-card p { font-size: 11px; color: #666; margin-bottom: 5px; }
+        .status-badge { display: inline-block; padding: 5px 10px; border-radius: 15px; font-size: 10px; font-weight: 500; }
+        .status-new { background: #ffc107; color: #333; }
+        .status-progress { background: #17a2b8; color: white; }
+        .status-completed { background: #28a745; color: white; }
+        .btn { padding: 8px 12px; font-size: 11px; border: none; border-radius: 8px; font-weight: 500; cursor: pointer; }
+        .btn-success { background: #28a745; color: white; }
+        .bottom-nav { background: white; padding: 10px; display: flex; justify-content: space-around; border-top: 1px solid #eee; }
+        .nav-item { text-align: center; color: #999; font-size: 12px; text-decoration: none; }
+        .nav-item i { font-size: 20px; display: block; margin-bottom: 3px; }
+        .nav-item.active { color: #dc3545; }
+    </style>
+</head>
+<body>
+    <div class="phone-frame">
+        <div class="status-bar">
+            <span>9:41</span>
+            <span>
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </span>
+        </div>
+        
+        <div class="app-header">
+            <h1><i class="fas fa-cog"></i> Админ панель</h1>
+            <p>Управление заявками</p>
+        </div>
+        
+        <div class="app-content">
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="stat-value">5</div>
+                    <div class="stat-label">Всего заявок</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">Новых</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">1</div>
+                    <div class="stat-label">В процессе</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">1</div>
+                    <div class="stat-label">Завершено</div>
+                </div>
+            </div>
+            
+            <div class="application-card">
+                <h3>Иванов Иван Иванович</h3>
+                <p><i class="fas fa-book"></i> Основы программирования на Python</p>
+                <p><i class="fas fa-calendar"></i> Начало: 01.10.2024</p>
+                <p><span class="status-badge status-new">Новая</span></p>
+                <button class="btn btn-success w-100 mt-2">
+                    <i class="fas fa-edit"></i> Изменить статус
+                </button>
+            </div>
+            
+            <div class="application-card">
+                <h3>Петрова Анна Сергеевна</h3>
+                <p><i class="fas fa-book"></i> Английский для IT-специалистов</p>
+                <p><i class="fas fa-calendar"></i> Начало: 10.10.2024</p>
+                <p><span class="status-badge status-new">Новая</span></p>
+                <button class="btn btn-success w-100 mt-2">
+                    <i class="fas fa-edit"></i> Изменить статус
+                </button>
+            </div>
+        </div>
+        
+        <div class="bottom-nav">
+            <a href="#" class="nav-item">
+                <i class="fas fa-home"></i>
+                Главная
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-list"></i>
+                Заявки
+            </a>
+            <a href="#" class="nav-item active">
+                <i class="fas fa-cog"></i>
+                Админка
+            </a>
+        </div>
+    </div>
+</body>
+</html>
